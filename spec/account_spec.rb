@@ -3,8 +3,11 @@ describe Account do
 
   let (:test_name) {'Xenith'}
   let (:test_amount) {10.00}
-  let (:statement) {double :statement, update: 'updated', balance: 'updated'}
-  subject(:account) {described_class.new(name: test_name, statement_class: statement)}
+  let (:statement) {double :statement, update: 'updated', balance: 'updated', show: '[]'}
+  let (:printer) {double :printer, print_statement: '[]'}
+  subject(:account) {described_class.new(name: test_name,
+                                         statement_class: statement,
+                                         printer_class: printer)}
 
   describe 'inialialize' do
 
@@ -30,6 +33,13 @@ describe Account do
     it 'calls to the statement class to show current balance' do
       expect(account.statement).to receive(:balance)
       account.show_current_balance
+    end
+  end
+
+  describe 'see_statement' do
+    it 'calls print_statment on printer class' do
+      expect(account.printer).to receive(:print_statement)
+      account.see_statement
     end
   end
 

@@ -5,7 +5,6 @@ class Statement
       @statement = [statement_entry_maker]
     end
 
-
     def show
       statement.dup
     end
@@ -17,7 +16,6 @@ class Statement
   private
 
     attr_reader :statement
-
 
     def append_new_statement(amount:amount)
       @statement = statement << statement_entry_maker(amount: amount)
