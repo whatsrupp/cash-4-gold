@@ -1,5 +1,6 @@
-require 'statement'
-require 'printer'
+require_relative 'statement'
+require_relative 'printer'
+
 class Account
   public
 
@@ -17,8 +18,8 @@ class Account
       update_statement(amount: amount)
     end
 
-    def show_current_balance
-      p calculate_balance
+    def balance
+      printer.print_balance
     end
 
     def see_statement
@@ -35,11 +36,8 @@ class Account
     def get_statement
       statement.show
     end
+
     def update_statement (amount: 0)
       statement.update(amount: amount)
-    end
-
-    def calculate_balance
-      statement.balance
     end
 end

@@ -17,7 +17,7 @@ class Statement
 
     attr_reader :statement
 
-    def append_new_statement(amount:amount)
+    def append_new_statement(amount:0)
       @statement = statement << statement_entry_maker(amount: amount)
     end
 

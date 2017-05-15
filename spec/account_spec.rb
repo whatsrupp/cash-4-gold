@@ -31,8 +31,8 @@ describe Account do
 
   describe 'current balance' do
     it 'calls to the statement class to show current balance' do
-      expect(account.statement).to receive(:balance)
-      account.show_current_balance
+      expect(account.printer).to receive(:print_balance)
+      account.balance
     end
   end
 
