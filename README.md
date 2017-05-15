@@ -1,5 +1,6 @@
 
-![Alt Text](/docs/stash-your-cash.png)
+![Alt Text](/docs/stash-your-cash.png 'stash your cash logo')
+![Alt Text](https://travis-ci.org/whatsrupp/stash-your-cash.svg?branch=master 'Travis Build Logo')
 
 This is a basic banking app which works as a practice tech test for interview preparation. The acceptance criteria outline is shown below:
 
